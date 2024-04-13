@@ -10,7 +10,7 @@ import {
 import SearchInput from "../../components/Input";
 import Loading from "../../components/Loading";
 import Header from "../../components/Header";
-import UserInfo from "../../components/Avatar";
+import UserInfo from "../../components/UserInfo";
 import { HomeContainer, TabsContainer, UserInfoContainer } from "./styles";
 
 type RepositoryType = {
