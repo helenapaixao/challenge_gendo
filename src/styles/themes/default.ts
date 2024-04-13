@@ -9,5 +9,7 @@ export const defaultTheme = {
     'slate-grey': '#5C646D',
     'base-text': '#574F4D',
     'rusty-orange': '#E36209',
+    'light-blue': '#44A1DE',
+    'black': '#000000',
   },
 }
