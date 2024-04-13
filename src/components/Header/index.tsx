@@ -7,6 +7,7 @@ export const Header = () => {
     <Container>
       <FontAwesomeIcon
         icon={faGithub}
+        data-testid="github-icon"
         scale={1}
         size={"2x"}
         color={"#fff"}
