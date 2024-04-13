@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Spinner = styled.div`
   border: 4px solid rgba(0, 0, 0, 0.3);
-  border-top: 4px solid #E36209;
+  border-top: 4px solid ${({ theme }) => theme.colors["rusty-orange"]};
   border-radius: 50%;
   width: 40px;
   height: 40px;

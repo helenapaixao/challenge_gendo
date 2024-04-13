@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TabsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid ${({ theme }) => theme.colors["pale-grey"]};
   margin-top: 50px;
   @media (max-width: 768px) {
     margin-top: 0;
@@ -22,7 +22,7 @@ export const TabButton = styled.button<{ active: boolean }>`
   position: relative;
 
   &:hover {
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors["white"]};
   }
   &::after {
     content: "";

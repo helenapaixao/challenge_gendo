@@ -11,5 +11,6 @@ export const defaultTheme = {
     'rusty-orange': '#E36209',
     'light-blue': '#44A1DE',
     'black': '#000000',
+    'black-two': '#24292e',
   },
 }
