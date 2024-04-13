@@ -15,13 +15,5 @@ export const mixins = {
       line-height: 130%;
       font-weight: 400;
     `,
-
-    tag: css`
-      font-family: 'Roboto', sans-serif;
-      font-size: 0.625rem;
-      line-height: 130%;
-      font-weight: 700;
-    `,
-
   },
 }
