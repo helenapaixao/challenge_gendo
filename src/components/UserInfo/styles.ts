@@ -37,7 +37,7 @@ export const Username = styled.span`
 export const Bio = styled.p`
   font-size: 16px;
   margin-top: 5px;
-  color: #574f4d;
+  color: ${({ theme }) => theme.colors["base-text"]};
 `;
 
 export const ContentAvatar = styled.div`

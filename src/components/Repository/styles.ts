@@ -11,7 +11,7 @@ export const RepoName = styled.h1`
   font-size: 20px;
   font-weight: 600;
   margin: 0;
-  color: #44a1de;
+  color: ${({ theme }) => theme.colors["light-blue"]};
   margin-bottom: 10px;
   margin-top: 10px;
 `;
@@ -19,7 +19,7 @@ export const RepoName = styled.h1`
 export const RepoDescription = styled.p`
   font-size: 12px;
   margin: 0;
-  color: #574f4d;
+  color: ${({ theme }) => theme.colors["base-text"]};
 `;
 
 export const RepoInfo = styled.div`
@@ -29,13 +29,13 @@ export const RepoInfo = styled.div`
 
   span {
     font-size: 12px;
-    color: #6a737d;
+    color: ${({ theme }) => theme.colors["base-text"]};
   }
 `;
 
 export const Divider = styled.div`
   height: 1px;
-  background-color: #e1e4e8;
+  background-color: ${({ theme }) => theme.colors["pale-grey"]};
   margin: 12px 0;
   @media (max-width: 768px) {
     width: 100%;

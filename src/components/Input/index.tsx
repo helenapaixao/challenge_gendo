@@ -21,7 +21,9 @@ const SearchInput = ({ placeholder, onSearch }: SearchInputProps) => {
   return (
     <Container>
       <IconContainer>
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon icon={faSearch} 
+        style={{ color: "#ccc" }}
+        />
       </IconContainer>
       <StyledInput
         type="text"

@@ -14,9 +14,9 @@ export const TabButton = styled.button<{ active: boolean }>`
   padding: 8px 52px !important;
   padding-top: 48px;
   border: none;
-  font-size: 16px;
-  background-color: #fff;
-  color: #574f4d;
+  font-size: 16px;  
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors["base-text"]};
   font-weight: ${(props) => (props.active ? "bold" : "normal")};
   cursor: pointer;
   position: relative;
@@ -48,10 +48,10 @@ export const NumberTabs = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 70%;
-  background-color: #e3e3e3;
+  background-color: ${({ theme }) => theme.colors["pale-grey"]};
   font-size: 12px;
   margin-left: 5px;
-  color: #574f4d;
+  color: ${({ theme }) => theme.colors["base-text"]};
   font-weight: bold;
 `;
 

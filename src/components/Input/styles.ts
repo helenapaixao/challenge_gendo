@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-color: #fff;
   border-radius: 5px;
   padding: 5px 10px;
-  border-color: #574f4d;
+  border-color: ${({ theme }) => theme.colors["pale-grey"]};
   border-width: 1px;
   margin-bottom: 20px;
   border-style: solid;
@@ -23,5 +23,5 @@ export const StyledInput = styled.input`
   border: none;
   background: transparent;
   font-size: 16px;
-  color: #574f4d;
+  color: ${({ theme }) => theme.colors["base-text"]};
 `;
