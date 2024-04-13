@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, IconContainer, StyledInput } from "./styles";
-/* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons'; */
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
@@ -21,7 +21,7 @@ const SearchInput = ({ placeholder, onSearch }: SearchInputProps) => {
   return (
     <Container>
       <IconContainer>
-        {/*   <FontAwesomeIcon icon={faSearch} /> */}
+        <FontAwesomeIcon icon={faSearch} />
       </IconContainer>
       <StyledInput
         type="text"

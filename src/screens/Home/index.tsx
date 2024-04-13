@@ -27,20 +27,15 @@ type RepositoryType = {
 
 const Home = () => {
   const [repositories, setRepositories] = useState<RepositoryType[]>([]);
-  const [starredRepositories, setStarredRepositories] = useState<
-    RepositoryType[]
-  >([]);
+  const [starredRepositories, setStarredRepositories] = useState<RepositoryType[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [starredSearchTerm, setStarredSearchTerm] = useState("");
   const [username, setUsername] = useState("");
   const [bio, setBio] = useState("");
   const [avatarUrl, setAvatarUrl] = useState("");
-  const [filteredRepositories, setFilteredRepositories] = useState<
-    RepositoryType[]
-  >([]);
-  const [filteredStarredRepositories, setFilteredStarredRepositories] =
-    useState<RepositoryType[]>([]);
+  const [filteredRepositories, setFilteredRepositories] = useState<RepositoryType[]>([]);
+  const [filteredStarredRepositories, setFilteredStarredRepositories] = useState<RepositoryType[]>([]);
 
   useEffect(() => {
     setFilteredRepositories(repositories);

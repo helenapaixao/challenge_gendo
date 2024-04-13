@@ -1,6 +1,6 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, Title } from "./styles";
+import { Container, Subtitle, Title } from "./styles";
 
 export const Header = () => {
   return (
@@ -12,7 +12,15 @@ export const Header = () => {
         color={"#fff"}
         style={{ marginRight: "10px", marginLeft: "20px" }}
       />
-      <Title>GitHub profiles</Title>
+      <div
+        style={{
+          flexDirection: "row",
+          display: "flex",
+        }}
+      >
+        <Title>GitHub</Title>
+        <Subtitle>profiles</Subtitle>
+      </div>
     </Container>
   );
 };

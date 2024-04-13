@@ -1,9 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCodeBranch, faCode } from "@fortawesome/free-solid-svg-icons";
 import {
-  Container,
   RepoDescription,
-  RepoInfo,
   RepoName,
   Divider,
   IconContainer,
@@ -36,7 +34,6 @@ export const Repository = ({ repo }: RepositoryProps) => {
         <FontAwesomeIcon icon={faCode} />
         {repo.language}
       </IconContainer>
-
       <Divider />
     </div>
   );

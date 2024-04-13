@@ -6,11 +6,10 @@ type TabProps = {
   number?: number;
 };
 
-export const Tab = ({ children, number }: TabProps) => {
+export const Tab = ({ children }: TabProps) => {
   return (
     <div>
       {children}
-      {number}
     </div>
   );
 };
