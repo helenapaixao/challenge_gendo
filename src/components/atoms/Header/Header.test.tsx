@@ -1,9 +1,11 @@
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect';
 import Header from './index';
+import renderWithTheme from '../../../utils/test.utils'; 
 
 test('renders GitHub header with correct styles and text', () => {
-  const { getByTestId, getByText } = render(<Header />);
+  const { getByTestId, getByText } = renderWithTheme(
+    <Header />
+  );
 
   const githubIcon = getByTestId('github-icon');
   const title = getByText('GitHub');

@@ -1,12 +1,12 @@
-import { render } from '@testing-library/react';
 import UserInfo from './index';
+import renderWithTheme from '../../../utils/test.utils';
 
 test('renders user information correctly', () => {
   const username = 'Test User';
   const avatarUrl = 'https://example.com/avatar.jpg';
   const bio = 'This is a test bio';
 
-  const { getByAltText, getByText } = render(
+  const { getByAltText, getByText } = renderWithTheme(
     <UserInfo username={username} avatarUrl={avatarUrl} bio={bio} />
   );
 
