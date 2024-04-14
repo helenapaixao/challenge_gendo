@@ -1,4 +1,5 @@
 import useDataRepositorie from "../../hooks/useDataRepositorie";
+
 import Tabs from "../../components/molecules/Tabs";
 import Tab from "../../components/molecules/Tab";
 import Repository from "../../components/molecules/Repository";
@@ -6,6 +7,7 @@ import SearchInput from "../../components/molecules/SearchInput";
 import Loading from "../../components/atoms/Loading";
 import Header from "../../components/atoms/Header";
 import UserInfo from "../../components/molecules/UserInfo";
+
 import { HomeContainer, TabsContainer, UserInfoContainer } from "./styles";
 
 const Home = () => {

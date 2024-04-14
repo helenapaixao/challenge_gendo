@@ -39,7 +39,6 @@ const useDataRepositorie = () => {
         const userData = await getUserData(user);
         const repositoriesData = await getRepositories(user);
         const starredData = await getStarredRepositories(user);
-        console.log("userData", userData);
         setUserData(userData);
         setRepositories(repositoriesData as RepositoryType[]);
         setStarredRepositories(starredData as RepositoryType[]);
