@@ -6,11 +6,14 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     margin-left: 23px;
     margin-top: 20px;
+    transition: flex-direction 0.3s ease-in-out, margin-left 0.3s ease-in-out,
+      margin-top 0.3s ease-in-out;
   }
 `;
 
 export const UserInfoContainer = styled.div`
   flex: 1;
+  transition: flex 0.3s ease-in-out;
 `;
 
 export const TabsContainer = styled.div`
