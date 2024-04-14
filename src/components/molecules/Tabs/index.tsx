@@ -1,6 +1,8 @@
 import React, { useState, ReactNode } from "react";
 import { NumberTabs, TabButton, TabContent, TabsContainer } from "./styles";
 
+
+
 export type TabsProps = {
   children: ReactNode;
   onTabClick?: (index: number) => void;
