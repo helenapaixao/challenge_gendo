@@ -1,11 +1,11 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/global";
-import { defaultTheme } from "./styles/themes/default";
+import {theme} from "./styles/themes/default";
 import Home from "./screens/Home";
 
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Home />
     </ThemeProvider>
