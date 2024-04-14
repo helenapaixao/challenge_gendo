@@ -18,7 +18,7 @@ Siga os passos abaixo para configurar a aplicação:
 1. Clone o repositório do projeto para sua máquina local:
 
 ```bash
-git clone https://github.com/helenapaixao/superagendador-front-end
+git clone https://github.com/helenapaixao/challenge_gendo
 cd nome-do-repositorio
 ``` 
 
