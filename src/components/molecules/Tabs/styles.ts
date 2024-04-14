@@ -45,9 +45,9 @@ export const NumberTabs = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
+  width: 27px;
   height: 20px;
-  border-radius: 80%;
+  border-radius: 38%;
   background-color: ${({ theme }) => theme.colors["pale-grey"]};
   font-size: 12px;
   margin-left: 5px;
