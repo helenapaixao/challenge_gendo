@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import Tabs from "../../components/Tabs";
-import Tab from "../../components/Tab";
-import Repository from "../../components/Repository";
+import Tabs from "../../components/molecules/Tabs";
+import Tab from "../../components/molecules/Tab";
+import Repository from "../../components/molecules/Repository";
 import {
   getRepositories,
   getStarredRepositories,
   getUserData,
 } from "../../services/api";
-import SearchInput from "../../components/Input";
-import Loading from "../../components/Loading";
-import Header from "../../components/Header";
-import UserInfo from "../../components/UserInfo";
+import SearchInput from "../../components/molecules/SearchInput";
+import Loading from "../../components/atoms/Loading";
+import Header from "../../components/atoms/Header";
+import UserInfo from "../../components/molecules/UserInfo";
 import { HomeContainer, TabsContainer, UserInfoContainer } from "./styles";
 
 type RepositoryType = {
@@ -102,7 +102,7 @@ const Home = () => {
         </UserInfoContainer>
         <TabsContainer>
           <Tabs onTabClick={handleTabClick}>
-            <Tab label="Repo" number={repositories.length}>
+            <Tab label="Repos" number={repositories.length}>
               <SearchInput
                 placeholder="Filter by name"
                 value={searchTerm}
