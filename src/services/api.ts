@@ -1,6 +1,7 @@
 import axios, { AxiosResponse, AxiosInstance } from "axios";
 
 export interface Repository {
+  html_url: any;
   id: number;
   name: string;
   description: string;
