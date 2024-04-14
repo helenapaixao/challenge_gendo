@@ -28,7 +28,6 @@ cd nome-do-repositorio
 npm install
 ``` 
 
-```
 ## Execução
 
 Após concluir a configuração, você está pronto para executar a aplicação. Siga os passos abaixo:
