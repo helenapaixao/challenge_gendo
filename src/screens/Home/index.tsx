@@ -1,96 +1,29 @@
-import React, { useState, useEffect } from "react";
+import useDataRepositorie from "../../hooks/useDataRepositorie";
 import Tabs from "../../components/molecules/Tabs";
 import Tab from "../../components/molecules/Tab";
 import Repository from "../../components/molecules/Repository";
-import {
-  getRepositories,
-  getStarredRepositories,
-  getUserData,
-} from "../../services/api";
 import SearchInput from "../../components/molecules/SearchInput";
 import Loading from "../../components/atoms/Loading";
 import Header from "../../components/atoms/Header";
 import UserInfo from "../../components/molecules/UserInfo";
 import { HomeContainer, TabsContainer, UserInfoContainer } from "./styles";
 
-type RepositoryType = {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  language: string;
-  stargazers_count: number;
-  forks: number;
-  star: number;
-};
-
-
 const Home = () => {
-  const [repositories, setRepositories] = useState<RepositoryType[]>([]);
-  const [starredRepositories, setStarredRepositories] = useState<RepositoryType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [starredSearchTerm, setStarredSearchTerm] = useState("");
-  const [username, setUsername] = useState("");
-  const [bio, setBio] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
-  const [filteredRepositories, setFilteredRepositories] = useState<RepositoryType[]>([]);
-  const [filteredStarredRepositories, setFilteredStarredRepositories] = useState<RepositoryType[]>([]);
-
-  useEffect(() => {
-    setFilteredRepositories(repositories);
-    setFilteredStarredRepositories(starredRepositories);
-  }, [repositories, starredRepositories]);
-
-  useEffect(() => {
-    const loadUserRepositories = async () => {
-      try {
-        const user = "helenapaixao";
-        const userData = await getUserData(user);
-        const repositoriesData = await getRepositories(user);
-        const starredData = await getStarredRepositories(user);
-        console.log("userData", userData);
-        setUsername(userData.name);
-        setBio(userData.bio);
-        setAvatarUrl(userData.avatar_url);
-        setRepositories(repositoriesData as unknown as RepositoryType[]);
-        setStarredRepositories(starredData as unknown as RepositoryType[]);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error loading repositories:", error);
-        setLoading(false);
-      }
-    };
-
-    loadUserRepositories();
-  }, []);
+  const {
+    loading,
+    searchTerm,
+    starredSearchTerm,
+    userData,
+    filteredRepositories,
+    filteredStarredRepositories,
+    setSearchTerm,
+    setStarredSearchTerm,
+    handleSearch,
+    handleStarredSearch,
+  } = useDataRepositorie();
 
   const handleTabClick = (index: number) => {
     console.log("Clicked on tab", index);
-  };
-
-  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const handleStarredSearchInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setStarredSearchTerm(e.target.value);
-  };
-
-  const handleSearch = (searchTerm: string) => {
-    const filtered = repositories.filter((repo) =>
-      repo.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredRepositories(filtered);
-  };
-
-  const handleStarredSearch = (searchTerm: string) => {
-    const filteredStarred = starredRepositories.filter((repo) =>
-      repo.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredStarredRepositories(filteredStarred);
   };
 
   return (
@@ -98,15 +31,19 @@ const Home = () => {
       <Header />
       <HomeContainer>
         <UserInfoContainer>
-          <UserInfo username={username} avatarUrl={avatarUrl} bio={bio} />{" "}
+          {userData ? (
+            <UserInfo username={userData.name} avatarUrl={userData.avatar_url} bio={userData.bio} />
+          ) : (
+            <Loading />
+          )}
         </UserInfoContainer>
         <TabsContainer>
           <Tabs onTabClick={handleTabClick}>
-            <Tab label="Repos" number={repositories.length}>
+            <Tab label="Repos" number={filteredRepositories.length}>
               <SearchInput
                 placeholder="Filter by name"
                 value={searchTerm}
-                onChange={handleSearchInputChange}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 onSearch={handleSearch}
               />
               {loading ? (
@@ -119,11 +56,11 @@ const Home = () => {
                 ))
               )}
             </Tab>
-            <Tab label="Starred" number={starredRepositories.length}>
+            <Tab label="Starred" number={filteredStarredRepositories.length}>
               <SearchInput
                 placeholder="Filter by name"
                 value={starredSearchTerm}
-                onChange={handleStarredSearchInputChange}
+                onChange={(e) => setStarredSearchTerm(e.target.value)}
                 onSearch={handleStarredSearch}
               />
               {loading ? (
